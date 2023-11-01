@@ -4,7 +4,7 @@ import NIO
 
 public class StunClient {
     public let channel: Channel
-    public let sender: StunMessageSender
+    let sender: StunMessageSender
     
     internal required init(channel: Channel, sender: StunMessageSender) {
         self.channel = channel

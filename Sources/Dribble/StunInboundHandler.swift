@@ -1,7 +1,7 @@
 import NIO
 import _NIOConcurrency
 
-public protocol StunMessageSender {
+protocol StunMessageSender {
     func sendMessage(_ message: StunMessage, on channel: Channel) async throws -> StunMessage
     func registerTurnAllocationChannel(_ channel: TurnAllocationChannel, theirAddress: SocketAddress) async throws
 }
