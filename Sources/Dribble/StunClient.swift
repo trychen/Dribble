@@ -3,8 +3,8 @@ import _NIOConcurrency
 import NIO
 
 public class StunClient {
-    let channel: Channel
-    let sender: StunMessageSender
+    public let channel: Channel
+    public let sender: StunMessageSender
     
     internal required init(channel: Channel, sender: StunMessageSender) {
         self.channel = channel
@@ -32,7 +32,7 @@ public class StunClient {
         return Self.init(channel: channel, sender: sender)
     }
     
-    internal func sendMessage(_ message: StunMessage) async throws -> StunMessage {
+    public func sendMessage(_ message: StunMessage) async throws -> StunMessage {
         try await sender.sendMessage(message, on: channel)
     }
     
